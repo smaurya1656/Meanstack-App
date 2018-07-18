@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html ng-app="myapp" >
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+</head>
+
+<body ng-controller="AppCtrl">
+ <div >
+  <h1>MINSTACK APPLICATION - CONTACTLIST APP</h1>
+  <table class="table">
+
+      <thead>
+      <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Number</th>
+          <th>Action</th>
+          <th>&nbsp</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td><input class="form-control" ng-model="contacts.name"></td>
+          <td><input class="form-control" ng-model="contacts.email"></td>
+          <td><input class="form-control" ng-model="contacts.number"></td>
+          <td><input type="button" class="btn btn-primary" value="ADD" ng-click="add()"></td>
+           <td>   <input type="button" class="btn btn-primary" value="update" ng-click="update()">
+
+           </td>
+      </tr>
+      <tr ng-repeat="contacts in contactlist">
+          <td>{{contacts.name}}</td>
+          <td>{{contacts.email}}</td>
+          <td>{{contacts.number}}</td>
+          <td><input type="button" class="btn btn-danger" value="delete" ng-click="remove(contacts._id)"></td>
+          <td><input type="button" class="btn btn-warning" value="edit" ng-click="edit(contacts._id)"></td>
+      </tr>
+      </tbody>
+
+  </table>
+
+                <input ng-model="title">
+                <span>   {{title}} </span>
+ </div>
+
+ <script src="controllers/cntroler.js"></script>
+</body>
+
+</html>
